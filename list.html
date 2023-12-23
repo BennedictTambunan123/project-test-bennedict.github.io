@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Project</title>
+</head>
+<body>
+
+    <!-- Navbar --> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-orange fixed-top" id="mainNav">
+        <div class="container">
+            <img class="navbar-brand" src="image/logo.png" width="80px"/>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-ideas">Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-careers">Careers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </nav>
+
+    <!-- Banner -->
+    <div class="parallax-container">
+        <div class="jumbotron jumbotron-fluid text-white text-center">
+            <div class="container">
+                <h1 class="display-4">Ideas</h1>
+                <p class="lead">Where all your great things begin</p>
+            </div>
+        </div>
+        <div class="parallax-image"></div>
+    </div> 
+    <div class="container mt-5">
+        <div class="row justify-content-end">
+            <div class="col-md-6" id="showing">
+                
+            </div>
+            <div class="col-md-3">
+                <div class="form-group form-inline">
+                    <label for="show" class="mr-2">Show per page:</label>
+                    <select class="form-control" id="show" name="show">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group form-inline">
+                    <label for="sort" class="mr-2">Sort:</label>
+                    <select class="form-control" id="sort" name="sort">
+                        <option value="published_at">Newest</option>
+                        <option value="-published_at">Oldest</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="section-work" class="container mt-3">
+        <div class="row" id="card-container">
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center" id="pagination">
+            </ul>
+        </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        .ellipsis {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const mainNav = document.getElementById('mainNav');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.scrollY;
+            if (scrollTop > lastScrollTop) {
+                // Scroll ke bawah
+                mainNav.classList.add('navbar-hidden');
+                mainNav.classList.remove('navbar-transparent');
+            } else {
+                // Scroll ke atas
+                mainNav.classList.remove('navbar-hidden');
+                mainNav.classList.add('navbar-transparent');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
+    </script>
+    
+</body>
+</html>

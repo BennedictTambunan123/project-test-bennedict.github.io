@@ -1,0 +1,89 @@
+.navbar {
+    background-color: orange;
+}
+
+#mainNav.navbar-transparent {
+    background-color: rgba(255, 165, 0, 0.8);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#mainNav.navbar-hidden {
+    transform: translateY(-70px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.jumbotron {
+    background-image: url('image/gambar_jumbotron.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    position: relative;
+    z-index: 2;
+}
+.jumbotron::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.jumbotron .container {
+    text-align: center;
+}
+
+.active {
+    border-bottom: 3px solid white;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-text {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.parallax-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.page-link {
+    color: black;
+    background-color: transparent;
+}
+
+.page-link:focus,
+.page-link:hover {
+    color: orange;
+    background-color: transparent;
+}
+
+
+.page-link.active-orange {
+    color: white;
+    background-color: orange;
+}
+
+
